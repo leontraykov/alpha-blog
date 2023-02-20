@@ -1,0 +1,71 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+
+ */
+
+// External libraries
+@import "bootstrap/scss/bootstrap";
+
+.navbar {
+  background-color: black !important;
+}
+
+.nav-link {
+  color: ivory !important;
+}
+
+#logo {
+  float: left;
+  font-size: 1.6em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+#hero {
+  height: 425px;
+  color: #fff;
+  padding: 2em;
+  border-radius: 5px;
+  background-color: rgb(209, 208, 208);
+  max-width: 90% !important;
+  background-image: asset-url('hero.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.footer {
+  color: #fff;
+  background-color: #333;
+  position: absolute;
+  width: 100%;
+  clear: both;
+  bottom: 0;
+  padding: 0;
+  margin: 0;
+  height: 60px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(250,250,250);
+}
+
+#page-content {
+  flex: 1 0 auto;
+}

@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>AlphaBlog</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Open Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
   <body>
-    <%# flash.each do |name, msg| %>
-      <%#= msg %>
-    <%# end %>
-    <%= yield %>
+    <%= render "layouts/navigation" %>
+
+    <div id="page-content">
+      <%= render "layouts/messages" %>
+
+      <%= render "layouts/hero" %>
+
+      <%= yield %>
+    </div>
+
+    <%= render "layouts/footer" %>
+
   </body>
 </html>
