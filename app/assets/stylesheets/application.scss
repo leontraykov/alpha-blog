@@ -66,6 +66,10 @@ body {
   background-color: #333;
 }
 
+#page-content {
+  flex: 1 0 auto;
+}
+
 .flex-n-center {
   display: flex;
   justify-content: center;
