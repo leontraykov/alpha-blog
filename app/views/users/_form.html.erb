@@ -1,0 +1,36 @@
+<%= render "shared/errors", obj: @user %>
+
+<%= form_with(model: @user, local: true) do |form| %>
+  <div class="article-form card shadow-lg col-8">
+    <div class="input-group">
+      <%= form.label :username, class: "input-group-text fs-4 text-light", id: "title-field" do %>
+        Name:
+      <% end %>
+      <%= form.text_field :username, class: "form-control shadow-lg rounded", id: "basic-url", aria: { describedby: "title-field" }, placeholder:"Enter a username" %>
+    </div>
+
+    <div class="input-group mt-4">
+      <%= form.label :email, class: "input-group-text fs-4 text-light" do %>
+        Email:
+      <% end %>
+      <%= form.email_field :email, class: "form-control shadow-lg rounded", placeholder:"Enter your email address" %>
+    </div>
+
+    <div class="input-group my-4">
+      <%= form.label :password, class: "input-group-text fs-4 text-light" do %>
+        Password:
+      <% end %>
+      <%= form.password_field :password, class: "form-control shadow-lg rounded", placeholder:"Choose a password" %>
+    </div>
+
+    <p class="form-button">
+      <%= form.submit "Sign up!", class: "mt-4 btn btn-lg btn-outline-light col-4 shadow-lg" %>
+    </p>
+  </div>
+<% end %>
+
+<div class="my-4">
+  <%= link_to '[ Cancel and return to articles listing ]', articles_path, class:"mb-4 cancel-link text-info d-flex justify-content-center" %>
+</div>
+<br class="mb-4">
+<br>

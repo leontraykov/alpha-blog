@@ -79,6 +79,10 @@ body {
   margin-bottom: 4em !important;
 }
 
+.cancel-link {
+  text-decoration: none;
+}
+
 .cancel-link:hover {
   text-decoration: underline;
 }
@@ -97,6 +101,7 @@ body {
 }
 
 .form-button {
+  // margin-bottom: 0;
   display: flex;
   justify-content: center;
 }

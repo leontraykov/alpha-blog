@@ -1,4 +1,4 @@
-<%= render "shared/errors" %>
+<%= render "shared/errors", obj: @article %>
 
 <%= form_with(model: @article, local: true) do |form| %>
   <div class="article-form card shadow-lg col-8">
@@ -9,7 +9,7 @@
       <%= form.text_field :title, class: "form-control shadow-lg rounded", id: "basic-url", aria: { describedby: "title-field" }, placeholder:"Title of article" %>
     </div>
 
-    <div class="input-group">
+    <div class="input-group mb-4">
       <%= form.label :description, class: "input-group-text fs-4 text-light" do %>
         Description:
       <% end %>
@@ -23,7 +23,7 @@
 <% end %>
 
 <div class="my-4">
-  <%= link_to '[ Cancel and return to articles listing ]', articles_path, class:"mb-4 cancel-link text-info d-flex justify-content-center text-decoration-none" %>
+  <%= link_to '[ Cancel and return to articles listing ]', articles_path, class:"mb-4 cancel-link text-info d-flex justify-content-center" %>
 </div>
 <br class="mb-4">
 <br>
