@@ -24,7 +24,7 @@
     </div>
 
     <p class="form-button">
-      <%= form.submit "Sign up!", class: "mt-4 btn btn-lg btn-outline-light col-4 shadow-lg" %>
+      <%= form.submit(@user.new_record? ? "Sign up!" : "Update account", class: "mt-4 btn btn-lg btn-outline-light col-4 shadow-lg") %>
     </p>
   </div>
 <% end %>
