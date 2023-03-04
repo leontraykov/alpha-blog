@@ -3,7 +3,9 @@
     <div class="article-block my-4 shadow col-8">
       <div class="card text-center">
         <div class="card-header">
-          <p class="fs-5 mt-3 fst-italic">by <%= article.user.username.capitalize if article.user %></p>
+          <% if article.user %>
+            <p class="fs-5 mt-3 fst-italic">by <%= link_to article.user.username, user_path(article.user), class:"mx-3" %></p>
+          <% end %>
         </div>
 
         <div class="card-body">

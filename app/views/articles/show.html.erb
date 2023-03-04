@@ -5,6 +5,7 @@
     <div class="card text-center">
       <div class="card-header">
         <p class="fs-5 mt-3 fst-italic">by <%= @article.user.username.capitalize if @article.user %></p>
+        <%= link_to gravatar_for(@article.user), user_path(@article.user) %>
       </div>
 
       <div class="card-body">

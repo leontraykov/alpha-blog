@@ -1,0 +1,36 @@
+<h1 class="text-center my-4">Open Bloggers</h1>
+
+<div class="flickr_pagination">
+  <%= will_paginate @articles, :container => false %>
+</div>
+
+<div class="articles">
+  <% @users.reverse.each do |user| %>
+    <div class="article-block my-4 shadow col-8">
+      <div class="card text-center">
+        <div class="card-header">
+          <p class="fs-3 mt-3 fst-italic"><%= link_to user.username.capitalize, user %></p>
+        </div>
+        <div class="card-body">
+          <div class="card-title">
+            <%= link_to gravatar_for(user, size: 150), user %>
+          </div>
+
+          <h5 class="card-text mx-4 my-4"><%= pluralize(user.articles.count, "article") %></h5>
+
+          <div class="container">
+            <%= link_to "View profile", user, class:"article-actions btn btn-outline-success" %>
+            <%= link_to "Edit profile", edit_user_path(user), class:"article-actions btn btn-outline-info" %>
+          </div>
+        </div>
+        <div class="card-footer text-muted">
+          <h5 class="mx-4 my-4">Joined <%= time_ago_in_words(user.created_at) %></h5>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div class="flickr_pagination mb-4">
+  <%= will_paginate @articles, :container => false %>
+</div>
